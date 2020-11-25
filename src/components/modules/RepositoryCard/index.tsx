@@ -1,6 +1,6 @@
 import React from 'react';
 import Suspense from 'components/modules/Suspense';
-import { useRepositoryQuery } from 'queries/generated/hooks';
+import { useGetRepositoryInfoQuery } from 'queries/generated/hooks';
 
 interface RepositoryCardProps {
   name: string;
@@ -8,7 +8,7 @@ interface RepositoryCardProps {
 }
 
 function RepositoryCard({ name, owner }: RepositoryCardProps) {
-  const { data, loading } = useRepositoryQuery({
+  const { data, loading } = useGetRepositoryInfoQuery({
     variables: {
       name,
       owner

@@ -19518,13 +19518,13 @@ export type ViewerHovercardContext = HovercardContext & {
 };
 
 
-export type RepositoryQueryVariables = Exact<{
+export type GetRepositoryInfoQueryVariables = Exact<{
   owner: Scalars['String'];
   name: Scalars['String'];
 }>;
 
 
-export type RepositoryQuery = (
+export type GetRepositoryInfoQuery = (
   { __typename?: 'Query' }
   & { repository?: Maybe<(
     { __typename?: 'Repository' }
@@ -19551,8 +19551,8 @@ export type RepositoryQuery = (
 );
 
 
-export const RepositoryDocument = gql`
-    query REPOSITORY($owner: String!, $name: String!) {
+export const GetRepositoryInfoDocument = gql`
+    query getRepositoryInfo($owner: String!, $name: String!) {
   repository(owner: $owner, name: $name) {
     id
     nameWithOwner
@@ -19584,43 +19584,43 @@ export const RepositoryDocument = gql`
     `;
 
 /**
- * __useRepositoryQuery__
+ * __useGetRepositoryInfoQuery__
  *
- * To run a query within a React component, call `useRepositoryQuery` and pass it any options that fit your needs.
- * When your component renders, `useRepositoryQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * To run a query within a React component, call `useGetRepositoryInfoQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetRepositoryInfoQuery` returns an object from Apollo Client that contains loading, error, and data properties
  * you can use to render your UI.
  *
  * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
  *
  * @example
- * const { data, loading, error } = useRepositoryQuery({
+ * const { data, loading, error } = useGetRepositoryInfoQuery({
  *   variables: {
  *      owner: // value for 'owner'
  *      name: // value for 'name'
  *   },
  * });
  */
-export function useRepositoryQuery(baseOptions: Apollo.QueryHookOptions<RepositoryQuery, RepositoryQueryVariables>) {
-        return Apollo.useQuery<RepositoryQuery, RepositoryQueryVariables>(RepositoryDocument, baseOptions);
+export function useGetRepositoryInfoQuery(baseOptions: Apollo.QueryHookOptions<GetRepositoryInfoQuery, GetRepositoryInfoQueryVariables>) {
+        return Apollo.useQuery<GetRepositoryInfoQuery, GetRepositoryInfoQueryVariables>(GetRepositoryInfoDocument, baseOptions);
       }
-export function useRepositoryLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<RepositoryQuery, RepositoryQueryVariables>) {
-          return Apollo.useLazyQuery<RepositoryQuery, RepositoryQueryVariables>(RepositoryDocument, baseOptions);
+export function useGetRepositoryInfoLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetRepositoryInfoQuery, GetRepositoryInfoQueryVariables>) {
+          return Apollo.useLazyQuery<GetRepositoryInfoQuery, GetRepositoryInfoQueryVariables>(GetRepositoryInfoDocument, baseOptions);
         }
-export type RepositoryQueryHookResult = ReturnType<typeof useRepositoryQuery>;
-export type RepositoryLazyQueryHookResult = ReturnType<typeof useRepositoryLazyQuery>;
-export type RepositoryQueryResult = Apollo.QueryResult<RepositoryQuery, RepositoryQueryVariables>;
+export type GetRepositoryInfoQueryHookResult = ReturnType<typeof useGetRepositoryInfoQuery>;
+export type GetRepositoryInfoLazyQueryHookResult = ReturnType<typeof useGetRepositoryInfoLazyQuery>;
+export type GetRepositoryInfoQueryResult = Apollo.QueryResult<GetRepositoryInfoQuery, GetRepositoryInfoQueryVariables>;
 
 declare module '*/queries.graphql' {
   import { DocumentNode } from 'graphql';
   const defaultDocument: DocumentNode;
-  export const REPOSITORY: DocumentNode;
+  export const getRepositoryInfo: DocumentNode;
 
   export default defaultDocument;
 }
     
 
-export const Repository = gql`
-    query REPOSITORY($owner: String!, $name: String!) {
+export const GetRepositoryInfo = gql`
+    query getRepositoryInfo($owner: String!, $name: String!) {
   repository(owner: $owner, name: $name) {
     id
     nameWithOwner

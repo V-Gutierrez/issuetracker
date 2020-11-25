@@ -1,62 +1,88 @@
 import { gql } from '@apollo/client';
 import * as Apollo from '@apollo/client';
-import { RepositoryQuery, RepositoryQueryVariables } from 'queries/generated/types';
+import {
+  GetRepositoryInfoQuery,
+  GetRepositoryInfoQueryVariables
+} from 'queries/generated/types';
 
-export const RepositoryDocument = gql`
-    query REPOSITORY($owner: String!, $name: String!) {
-  repository(owner: $owner, name: $name) {
-    id
-    nameWithOwner
-    description
-    stargazerCount
-    forkCount
-    url
-    licenseInfo {
-      name
-    }
-    pullRequests(last: 5) {
-      totalCount
-      nodes {
-        id
-        title
-        url
+export const GetRepositoryInfoDocument = gql`
+  query getRepositoryInfo($owner: String!, $name: String!) {
+    repository(owner: $owner, name: $name) {
+      id
+      nameWithOwner
+      description
+      stargazerCount
+      forkCount
+      url
+      licenseInfo {
+        name
       }
-    }
-    issues(last: 5) {
-      totalCount
-      nodes {
-        id
-        title
-        url
+      pullRequests(last: 5) {
+        totalCount
+        nodes {
+          id
+          title
+          url
+        }
+      }
+      issues(last: 5) {
+        totalCount
+        nodes {
+          id
+          title
+          url
+        }
       }
     }
   }
-}
-    `;
+`;
 
 /**
- * __useRepositoryQuery__
+ * __useGetRepositoryInfoQuery__
  *
- * To run a query within a React component, call `useRepositoryQuery` and pass it any options that fit your needs.
- * When your component renders, `useRepositoryQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * To run a query within a React component, call `useGetRepositoryInfoQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetRepositoryInfoQuery` returns an object from Apollo Client that contains loading, error, and data properties
  * you can use to render your UI.
  *
  * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
  *
  * @example
- * const { data, loading, error } = useRepositoryQuery({
+ * const { data, loading, error } = useGetRepositoryInfoQuery({
  *   variables: {
  *      owner: // value for 'owner'
  *      name: // value for 'name'
  *   },
  * });
  */
-export function useRepositoryQuery(baseOptions: Apollo.QueryHookOptions<RepositoryQuery, RepositoryQueryVariables>) {
-        return Apollo.useQuery<RepositoryQuery, RepositoryQueryVariables>(RepositoryDocument, baseOptions);
-      }
-export function useRepositoryLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<RepositoryQuery, RepositoryQueryVariables>) {
-          return Apollo.useLazyQuery<RepositoryQuery, RepositoryQueryVariables>(RepositoryDocument, baseOptions);
-        }
-export type RepositoryQueryHookResult = ReturnType<typeof useRepositoryQuery>;
-export type RepositoryLazyQueryHookResult = ReturnType<typeof useRepositoryLazyQuery>;
-export type RepositoryQueryResult = Apollo.QueryResult<RepositoryQuery, RepositoryQueryVariables>;
+export function useGetRepositoryInfoQuery(
+  baseOptions: Apollo.QueryHookOptions<
+    GetRepositoryInfoQuery,
+    GetRepositoryInfoQueryVariables
+  >
+) {
+  return Apollo.useQuery<
+    GetRepositoryInfoQuery,
+    GetRepositoryInfoQueryVariables
+  >(GetRepositoryInfoDocument, baseOptions);
+}
+export function useGetRepositoryInfoLazyQuery(
+  baseOptions?: Apollo.LazyQueryHookOptions<
+    GetRepositoryInfoQuery,
+    GetRepositoryInfoQueryVariables
+  >
+) {
+  return Apollo.useLazyQuery<
+    GetRepositoryInfoQuery,
+    GetRepositoryInfoQueryVariables
+  >(GetRepositoryInfoDocument, baseOptions);
+}
+export type GetRepositoryInfoQueryHookResult = ReturnType<
+  typeof useGetRepositoryInfoQuery
+>;
+export type GetRepositoryInfoLazyQueryHookResult = ReturnType<
+  typeof useGetRepositoryInfoLazyQuery
+>;
+export type GetRepositoryInfoQueryResult = Apollo.QueryResult<
+  GetRepositoryInfoQuery,
+  GetRepositoryInfoQueryVariables
+>;

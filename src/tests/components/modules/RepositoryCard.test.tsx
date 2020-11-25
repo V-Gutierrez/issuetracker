@@ -1,31 +1,19 @@
+import React from 'react';
 import { render, screen } from '@testing-library/react';
-import RepositoryCard from '../../../components/modules/RepositoryCard';
+import { MockedProvider } from '@apollo/client/testing';
+
+import RepositoryCard from 'components/modules/RepositoryCard';
 
 describe('RepositoryCard component', () => {
   it('should render properly based on passed props', () => {
-    const repositorySample = {
-      repositoryName: 'IssueTracker',
-      stars: 2,
-      issues: 5,
-      pullRequests: 3
-    };
-
-    render(<RepositoryCard {...repositorySample} />);
-
-    const repositoryCardName = screen.getByTestId('repositorycard-name');
-    const repositoryCardStars = screen.getByTestId('repositorycard-stars');
-    const repositoryCardPullRequests = screen.getByTestId(
-      'repositorycard-pullrequests'
+    render(
+      <MockedProvider>
+        <RepositoryCard name="issuetracker" owner="v-gutierrez" />
+      </MockedProvider>
     );
-    const repositoryIssues = screen.getByTestId('repositorycard-issues');
 
-    expect(repositoryCardName.innerHTML).toEqual(
-      repositorySample.repositoryName
-    );
-    expect(+repositoryCardStars.innerHTML).toEqual(repositorySample.stars);
-    expect(+repositoryCardPullRequests.innerHTML).toEqual(
-      repositorySample.pullRequests
-    );
-    expect(+repositoryIssues.innerHTML).toEqual(repositorySample.issues);
+    const cardContainer = screen.getByTestId('repositorycard-wrapper');
+
+    expect(cardContainer).toBeTruthy();
   });
 });
