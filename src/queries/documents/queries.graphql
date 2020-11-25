@@ -1,0 +1,23 @@
+query REPOSITORY($owner: String!, $name: String!) {
+  repository(owner: $owner, name: $name) {
+    id
+    nameWithOwner
+    pullRequests(last: 5) {
+      totalCount
+      nodes {
+        id
+        title
+        url
+      }
+    }
+    stargazerCount
+    issues(last: 5) {
+      totalCount
+      nodes {
+        id
+        title
+        url
+      }
+    }
+  }
+}
