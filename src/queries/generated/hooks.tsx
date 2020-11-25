@@ -1,5 +1,6 @@
 import { gql } from '@apollo/client';
 import * as Apollo from '@apollo/client';
+import { RepositoryQuery, RepositoryQueryVariables } from 'queries/generated/types';
 
 export const RepositoryDocument = gql`
     query REPOSITORY($owner: String!, $name: String!) {

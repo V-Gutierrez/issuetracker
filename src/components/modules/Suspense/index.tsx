@@ -16,7 +16,7 @@ export default function Suspense({
   fallBack = defaultFallback
 }: SuspenseProps) {
   return (
-    <div className="suspense__container">
+    <div data-testid="suspense-container" className="suspense__container">
       {loadingState ? fallBack : children}
     </div>
   );

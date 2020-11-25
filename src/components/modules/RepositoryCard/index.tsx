@@ -1,6 +1,6 @@
+import React from 'react';
 import Suspense from 'components/modules/Suspense';
 import { useRepositoryQuery } from 'queries/generated/hooks';
-import React from 'react';
 
 interface RepositoryCardProps {
   name: string;
@@ -16,22 +16,14 @@ function RepositoryCard({ name, owner }: RepositoryCardProps) {
   });
 
   return (
-    <span>
+    <span data-testid="repositorycard-wrapper">
       <Suspense loadingState={loading}>
-        {data?.repository && (
+        {!loading && data?.repository && (
           <>
-            <h1 data-testid="repositorycard-name">
-              {data?.repository?.nameWithOwner}
-            </h1>
-            <p data-testid="repositorycard-stars">
-              ⭐{data?.repository?.stargazerCount}
-            </p>
-            <p data-testid="repositorycard-pullrequests">
-              🔀{data?.repository?.pullRequests.totalCount}
-            </p>
-            <p data-testid="repositorycard-issues">
-              🚩{data?.repository?.issues.totalCount}
-            </p>
+            <h1>{data?.repository?.nameWithOwner}</h1>
+            <p>⭐{data?.repository?.stargazerCount}</p>
+            <p>🔀{data?.repository?.pullRequests.totalCount}</p>
+            <p>🚩{data?.repository?.issues.totalCount}</p>
           </>
         )}
       </Suspense>
