@@ -6,6 +6,13 @@ export const RepositoryDocument = gql`
   repository(owner: $owner, name: $name) {
     id
     nameWithOwner
+    description
+    stargazerCount
+    forkCount
+    url
+    licenseInfo {
+      name
+    }
     pullRequests(last: 5) {
       totalCount
       nodes {
@@ -14,7 +21,6 @@ export const RepositoryDocument = gql`
         url
       }
     }
-    stargazerCount
     issues(last: 5) {
       totalCount
       nodes {

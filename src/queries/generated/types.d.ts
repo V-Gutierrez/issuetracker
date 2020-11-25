@@ -19528,8 +19528,11 @@ export type RepositoryQuery = (
   { __typename?: 'Query' }
   & { repository?: Maybe<(
     { __typename?: 'Repository' }
-    & Pick<Repository, 'id' | 'nameWithOwner' | 'stargazerCount'>
-    & { pullRequests: (
+    & Pick<Repository, 'id' | 'nameWithOwner' | 'description' | 'stargazerCount' | 'forkCount' | 'url'>
+    & { licenseInfo?: Maybe<(
+      { __typename?: 'License' }
+      & Pick<License, 'name'>
+    )>, pullRequests: (
       { __typename?: 'PullRequestConnection' }
       & Pick<PullRequestConnection, 'totalCount'>
       & { nodes?: Maybe<Array<Maybe<(
@@ -19553,6 +19556,13 @@ export const RepositoryDocument = gql`
   repository(owner: $owner, name: $name) {
     id
     nameWithOwner
+    description
+    stargazerCount
+    forkCount
+    url
+    licenseInfo {
+      name
+    }
     pullRequests(last: 5) {
       totalCount
       nodes {
@@ -19561,7 +19571,6 @@ export const RepositoryDocument = gql`
         url
       }
     }
-    stargazerCount
     issues(last: 5) {
       totalCount
       nodes {
@@ -19615,6 +19624,13 @@ export const Repository = gql`
   repository(owner: $owner, name: $name) {
     id
     nameWithOwner
+    description
+    stargazerCount
+    forkCount
+    url
+    licenseInfo {
+      name
+    }
     pullRequests(last: 5) {
       totalCount
       nodes {
@@ -19623,7 +19639,6 @@ export const Repository = gql`
         url
       }
     }
-    stargazerCount
     issues(last: 5) {
       totalCount
       nodes {

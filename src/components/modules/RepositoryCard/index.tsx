@@ -1,24 +1,33 @@
+import { useRepositoryQuery } from 'queries/generated/hooks';
 import React from 'react';
 
 interface RepositoryCardProps {
-  repositoryName: string;
-  stars: number;
-  pullRequests: number;
-  issues: number;
+  name: string;
+  owner: string;
 }
 
-function RepositoryCard({
-  repositoryName,
-  stars,
-  pullRequests,
-  issues
-}: RepositoryCardProps) {
+function RepositoryCard({ name, owner }: RepositoryCardProps) {
+  const { data } = useRepositoryQuery({
+    variables: {
+      name,
+      owner
+    }
+  });
+
   return (
     <span>
-      <h1 data-testid="repositorycard-name">{repositoryName}</h1>
-      <p data-testid="repositorycard-stars">{stars}</p>
-      <p data-testid="repositorycard-pullrequests">{pullRequests}</p>
-      <p data-testid="repositorycard-issues">{issues}</p>
+      <h1 data-testid="repositorycard-name">
+        {data?.repository.nameWithOwner}
+      </h1>
+      <p data-testid="repositorycard-stars">
+        ⭐{data?.repository.stargazerCount}
+      </p>
+      <p data-testid="repositorycard-pullrequests">
+        🔀{data?.repository.pullRequests.totalCount}
+      </p>
+      <p data-testid="repositorycard-issues">
+        🚩{data?.repository.issues.totalCount}
+      </p>
     </span>
   );
 }

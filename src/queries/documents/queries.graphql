@@ -2,6 +2,13 @@ query REPOSITORY($owner: String!, $name: String!) {
   repository(owner: $owner, name: $name) {
     id
     nameWithOwner
+    description
+    stargazerCount
+    forkCount
+    url
+    licenseInfo {
+      name
+    }
     pullRequests(last: 5) {
       totalCount
       nodes {
@@ -10,7 +17,6 @@ query REPOSITORY($owner: String!, $name: String!) {
         url
       }
     }
-    stargazerCount
     issues(last: 5) {
       totalCount
       nodes {
