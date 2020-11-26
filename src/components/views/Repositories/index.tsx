@@ -13,9 +13,10 @@ interface RepositoriesProps {
 function Repositories({ repositories }: RepositoriesProps) {
   return (
     <span className="repositories" data-testid="repositories-wrapper">
-      {repositories.map(({ name, owner }) => (
-        <RepositoryCard key={name + owner} name={name} owner={owner} />
-      ))}
+      {repositories &&
+        repositories.map(({ name, owner }) => (
+          <RepositoryCard key={name + owner} name={name} owner={owner} />
+        ))}
     </span>
   );
 }
