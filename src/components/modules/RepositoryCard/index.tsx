@@ -22,36 +22,30 @@ function RepositoryCard({ name, owner }: RepositoryCardProps) {
       className={data ? 'repositorycard' : 'repositorycard--empty'}
       data-testid="repositorycard-wrapper"
     >
+      <h1 className="repositorycard__title">
+        <a href={data?.repository.url}>{data?.repository?.nameWithOwner}</a>
+      </h1>
       <Suspense loadingState={loading}>
-        {!loading && data?.repository && (
-          <>
-            <h1 className="repositorycard__title">
-              <a href={data?.repository.url}>
-                {data?.repository?.nameWithOwner}
-              </a>
-            </h1>
-            <span className="repositorycard__stats">
-              <span className="repositorycard__stats__stars">
-                <span role="img">
-                  <RiStarFill size={30} color="white" />
-                </span>
-                <p>{data?.repository?.stargazerCount}</p>
-              </span>
-              <span className="repositorycard__stats__pullrequests">
-                <span role="img">
-                  <RiGitPullRequestFill size={30} color="white" />
-                </span>
-                <p>{data?.repository?.pullRequests.totalCount}</p>
-              </span>
-              <span className="repositorycard__stats__issues">
-                <span role="img">
-                  <VscIssues size={30} color="white" />
-                </span>
-                <p>{data?.repository?.issues.totalCount}</p>
-              </span>
+        <span className="repositorycard__stats">
+          <span className="repositorycard__stats__stars">
+            <span role="img">
+              <RiStarFill size={30} color="white" />
             </span>
-          </>
-        )}
+            <p>{data?.repository?.stargazerCount}</p>
+          </span>
+          <span className="repositorycard__stats__pullrequests">
+            <span role="img">
+              <RiGitPullRequestFill size={30} color="white" />
+            </span>
+            <p>{data?.repository?.pullRequests.totalCount}</p>
+          </span>
+          <span className="repositorycard__stats__issues">
+            <span role="img">
+              <VscIssues size={30} color="white" />
+            </span>
+            <p>{data?.repository?.issues.totalCount}</p>
+          </span>
+        </span>
       </Suspense>
     </span>
   );
