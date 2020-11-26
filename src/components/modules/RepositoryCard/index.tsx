@@ -1,6 +1,8 @@
 import React from 'react';
 import Suspense from 'components/modules/Suspense';
 import { useGetRepositoryInfoQuery } from 'queries/generated/hooks';
+import { RiGitPullRequestFill, RiStarFill } from 'react-icons/ri';
+import { VscIssues } from 'react-icons/vsc';
 
 interface RepositoryCardProps {
   name: string;
@@ -30,15 +32,21 @@ function RepositoryCard({ name, owner }: RepositoryCardProps) {
             </h1>
             <span className="repositorycard__stats">
               <span className="repositorycard__stats__stars">
-                <p>Stars</p>
+                <span role="img">
+                  <RiStarFill size={30} color="white" />
+                </span>
                 <p>{data?.repository?.stargazerCount}</p>
               </span>
               <span className="repositorycard__stats__pullrequests">
-                <p>Pull Requests</p>
+                <span role="img">
+                  <RiGitPullRequestFill size={30} color="white" />
+                </span>
                 <p>{data?.repository?.pullRequests.totalCount}</p>
               </span>
               <span className="repositorycard__stats__issues">
-                <p>Issues open</p>
+                <span role="img">
+                  <VscIssues size={30} color="white" />
+                </span>
                 <p>{data?.repository?.issues.totalCount}</p>
               </span>
             </span>
