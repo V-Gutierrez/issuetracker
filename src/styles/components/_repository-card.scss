@@ -1,0 +1,45 @@
+.repositorycard {
+  width: 90%;
+  height: 100%;
+  background: rgb(51, 51, 50);
+  word-break: break-all;
+  text-overflow: ellipsis;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.repositorycard__title {
+  margin-left: 5%;
+  padding-right: 5%;
+  height: 10%;
+  margin-bottom: 10%;
+  color: rgb(165, 164, 164);
+}
+
+.repositorycard__title:hover {
+  color: white;
+}
+
+.repositorycard--empty {
+  display: none;
+}
+
+.repositorycard__stats {
+  width: 80%;
+  height: 25%;
+  margin: 5% auto;
+  padding-top: 0.25%;
+  justify-content: center;
+  display: flex;
+}
+
+.repositorycard__stats__stars,
+.repositorycard__stats__pullrequests,
+.repositorycard__stats__issues {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2.5% 5%;
+  line-height: 0.5;
+  color: rgb(204, 203, 203);
+}
