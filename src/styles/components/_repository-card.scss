@@ -32,6 +32,7 @@
   padding-top: 0.25%;
   justify-content: center;
   display: flex;
+  @include prefix(user-select, none, webkit ms o moz);
 }
 
 .repositorycard__stats__stars,
