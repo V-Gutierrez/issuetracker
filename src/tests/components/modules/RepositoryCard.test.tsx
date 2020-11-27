@@ -1,5 +1,9 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import {
+  render,
+  screen,
+  waitForElementToBeRemoved
+} from '@testing-library/react';
 import { MockedProvider } from '@apollo/client/testing';
 
 import RepositoryCard from 'components/modules/RepositoryCard';
@@ -17,21 +21,7 @@ describe('RepositoryCard component', () => {
           }
         },
         result: {
-          data: {
-            repository: {
-              id: '__id',
-              nameWithOwner: 'V-Gutierrez/issuetracker',
-              stargazerCount: 0,
-              forkCount: 0,
-              url: 'https://github.com/V-Gutierrez/issuetracker',
-              pullRequests: {
-                totalCount: 0
-              },
-              issues: {
-                totalCount: 0
-              }
-            }
-          }
+          data: {}
         }
       }
     ];
@@ -45,5 +35,21 @@ describe('RepositoryCard component', () => {
     const cardContainer = screen.getByTestId('repositorycard-wrapper');
 
     expect(cardContainer).toBeTruthy();
+
+    await waitForElementToBeRemoved(
+      screen.getByTestId('suspense-default-fallback')
+    ).then(() => {
+      const repositoryCardTitle = screen.getByTestId('repositorycard-title');
+      const repositoryCardStatsContainer = screen.getByTestId(
+        'repositorycard-stats'
+      );
+
+      expect(repositoryCardTitle).toBeTruthy();
+      expect(repositoryCardStatsContainer).toBeTruthy();
+      expect(repositoryCardStatsContainer.hasChildNodes()).toBe(true);
+      expect(repositoryCardStatsContainer.children.length).toEqual(3);
+    });
+
+    expect.assertions(5);
   });
 });
