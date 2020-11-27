@@ -1,0 +1,29 @@
+query getRepositoryInfo($owner: String!, $name: String!) {
+  repository(owner: $owner, name: $name) {
+    id
+    nameWithOwner
+    description
+    stargazerCount
+    forkCount
+    url
+    licenseInfo {
+      name
+    }
+    pullRequests(last: 5) {
+      totalCount
+      nodes {
+        id
+        title
+        url
+      }
+    }
+    issues(last: 5) {
+      totalCount
+      nodes {
+        id
+        title
+        url
+      }
+    }
+  }
+}

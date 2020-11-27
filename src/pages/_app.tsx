@@ -1,8 +1,14 @@
-import '../styles/globals.scss';
+import 'styles/main.scss';
 import { AppProps } from 'next/app';
+import { ApolloProvider } from '@apollo/react-hooks';
+import { githubApi } from 'services/apollo';
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
+  return (
+    <ApolloProvider client={githubApi}>
+      <Component {...pageProps} />
+    </ApolloProvider>
+  );
 }
 
 export default MyApp;
