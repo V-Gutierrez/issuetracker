@@ -1,6 +1,6 @@
 .repositories {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   grid-template-rows: auto-fit;
   gap: 0.25vh;
   padding: 15px 10px;
