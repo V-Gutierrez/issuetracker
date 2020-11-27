@@ -21,6 +21,4 @@ jobs:
             - ./node_modules
       - run:
           name: Run tests and Collect Coverage Reports
-          command: npm run test
-      - codecov/upload:
-          file: ./.codecov.yml
+          command: npm run test && npm run upload-coverage -t $CODECOV_TOKEN
