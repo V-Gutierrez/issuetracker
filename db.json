@@ -1,0 +1,506 @@
+{
+  "data": {
+    "curated_repositories": [
+      {
+        "name": "flutter",
+        "owner": "flutter"
+      },
+      {
+        "name": "facebook",
+        "owner": "create-react-app"
+      },
+      {
+        "name": "ant-design",
+        "owner": "ant-design"
+      },
+      {
+        "name": "trekhleb",
+        "owner": "javascript-algorithms"
+      },
+      {
+        "name": "mui-org",
+        "owner": "material-ui"
+      },
+      {
+        "name": "rails",
+        "owner": "rails"
+      },
+      {
+        "name": "gatsbyjs",
+        "owner": "gatsby"
+      },
+      {
+        "name": "impress",
+        "owner": "impress.js"
+      },
+      {
+        "name": "jgthms",
+        "owner": "bulma"
+      },
+      {
+        "name": "robbyrussell",
+        "owner": "oh-my-zsh"
+      },
+      {
+        "name": "facebook",
+        "owner": "jest"
+      },
+      {
+        "name": "iamkun",
+        "owner": "dayjs"
+      },
+      {
+        "name": "plataformatec",
+        "owner": "devise"
+      },
+      {
+        "name": "sequelize",
+        "owner": "sequelize"
+      },
+      {
+        "name": "Marak",
+        "owner": "faker.js"
+      },
+      {
+        "name": "tootsuite",
+        "owner": "mastodon"
+      },
+      {
+        "name": "helm",
+        "owner": "charts"
+      },
+      {
+        "name": "facebook",
+        "owner": "flow"
+      },
+      {
+        "name": "formium",
+        "owner": "formik"
+      },
+      {
+        "name": "date-fns",
+        "owner": "date-fns"
+      },
+      {
+        "name": "elixir-lang",
+        "owner": "elixir"
+      },
+      {
+        "name": "BoostIO",
+        "owner": "Boostnote"
+      },
+      {
+        "name": "tailwindcss",
+        "owner": "tailwindcss"
+      },
+      {
+        "name": "tastejs",
+        "owner": "todomvc"
+      },
+      {
+        "name": "diaspora",
+        "owner": "diaspora"
+      },
+      {
+        "name": "thepracticaldev",
+        "owner": "dev.to"
+      },
+      {
+        "name": "rubocop-hq",
+        "owner": "rubocop"
+      },
+      {
+        "name": "activeadmin",
+        "owner": "activeadmin"
+      },
+      {
+        "name": "sinatra",
+        "owner": "sinatra"
+      },
+      {
+        "name": "stympy",
+        "owner": "faker"
+      },
+      {
+        "name": "faker-ruby",
+        "owner": "faker"
+      },
+      {
+        "name": "denysdovhan",
+        "owner": "spaceship-prompt"
+      },
+      {
+        "name": "sherlock-project",
+        "owner": "sherlock"
+      },
+      {
+        "name": "akiran",
+        "owner": "react-slick"
+      },
+      {
+        "name": "expo",
+        "owner": "expo"
+      },
+      {
+        "name": "segmentio",
+        "owner": "evergreen"
+      },
+      {
+        "name": "moment",
+        "owner": "luxon"
+      },
+      {
+        "name": "jquense",
+        "owner": "yup"
+      },
+      {
+        "name": "reactjs",
+        "owner": "reactjs.org"
+      },
+      {
+        "name": "vuejs",
+        "owner": "vuejs.org"
+      },
+      {
+        "name": "Solido",
+        "owner": "awesome-flutter"
+      },
+      {
+        "name": "plouc",
+        "owner": "nivo"
+      },
+      {
+        "name": "svenfuchs",
+        "owner": "rails-i18n"
+      },
+      {
+        "name": "pry",
+        "owner": "pry"
+      },
+      {
+        "name": "grommet",
+        "owner": "grommet"
+      },
+      {
+        "name": "rails",
+        "owner": "webpacker"
+      },
+      {
+        "name": "react-navigation",
+        "owner": "react-navigation"
+      },
+      {
+        "name": "callstack",
+        "owner": "react-native-paper"
+      },
+      {
+        "name": "drapergem",
+        "owner": "draper"
+      },
+      {
+        "name": "thoughtbot",
+        "owner": "administrate"
+      },
+      {
+        "name": "vcr",
+        "owner": "vcr"
+      },
+      {
+        "name": "fatfreecrm",
+        "owner": "fat_free_crm"
+      },
+      {
+        "name": "ctrlpvim",
+        "owner": "ctrlp.vim"
+      },
+      {
+        "name": "lancedikson",
+        "owner": "bowser"
+      },
+      {
+        "name": "JeffreyWay",
+        "owner": "laravel-mix"
+      },
+      {
+        "name": "amazing-print",
+        "owner": "amazing_print"
+      },
+      {
+        "name": "mikel",
+        "owner": "mail"
+      },
+      {
+        "name": "xotahal",
+        "owner": "react-native-material-ui"
+      },
+      {
+        "name": "travisjeffery",
+        "owner": "timecop"
+      },
+      {
+        "name": "thoughtbot",
+        "owner": "shoulda-matchers"
+      },
+      {
+        "name": "react-native-community",
+        "owner": "react-native-blur"
+      },
+      {
+        "name": "Rocketseat",
+        "owner": "unform"
+      },
+      {
+        "name": "rubykube",
+        "owner": "peatio"
+      },
+      {
+        "name": "lobsters",
+        "owner": "lobsters"
+      },
+      {
+        "name": "teamcapybara",
+        "owner": "capybara"
+      },
+      {
+        "name": "omarroth",
+        "owner": "invidious"
+      },
+      {
+        "name": "igorescobar",
+        "owner": "jQuery-Mask-Plugin"
+      },
+      {
+        "name": "rubygems",
+        "owner": "rubygems.org"
+      },
+      {
+        "name": "welldone-software",
+        "owner": "why-did-you-render"
+      },
+      {
+        "name": "cucumber",
+        "owner": "cucumber-ruby"
+      },
+      {
+        "name": "ffaker",
+        "owner": "ffaker"
+      },
+      {
+        "name": "chrismccord",
+        "owner": "render_sync"
+      },
+      {
+        "name": "infinitered",
+        "owner": "gluegun"
+      },
+      {
+        "name": "education",
+        "owner": "classroom"
+      },
+      {
+        "name": "twilio",
+        "owner": "twilio-ruby"
+      },
+      {
+        "name": "gocardless",
+        "owner": "statesman"
+      },
+      {
+        "name": "sporkmonger",
+        "owner": "addressable"
+      },
+      {
+        "name": "idyll-lang",
+        "owner": "idyll"
+      },
+      {
+        "name": "plentz",
+        "owner": "lol_dba"
+      },
+      {
+        "name": "codetriage",
+        "owner": "codetriage"
+      },
+      {
+        "name": "mozilla-mobile",
+        "owner": "android-components"
+      },
+      {
+        "name": "withspectrum",
+        "owner": "spectrum"
+      },
+      {
+        "name": "mojombo",
+        "owner": "chronic"
+      },
+      {
+        "name": "kotlintest",
+        "owner": "kotlintest"
+      },
+      {
+        "name": "rspec",
+        "owner": "rspec-core"
+      },
+      {
+        "name": "consul",
+        "owner": "consul"
+      },
+      {
+        "name": "ifmeorg",
+        "owner": "ifme"
+      },
+      {
+        "name": "publiclab",
+        "owner": "plots2"
+      },
+      {
+        "name": "rails-sqlserver",
+        "owner": "activerecord-sqlserver-adapter"
+      },
+      {
+        "name": "SimpleMobileTools",
+        "owner": "Simple-Gallery"
+      },
+      {
+        "name": "react-native-community",
+        "owner": "cli"
+      },
+      {
+        "name": "mozilla",
+        "owner": "multi-account-containers"
+      },
+      {
+        "name": "openSUSE",
+        "owner": "osem"
+      },
+      {
+        "name": "rubyforgood",
+        "owner": "diaper"
+      },
+      {
+        "name": "rubyforgood",
+        "owner": "voices-of-consent"
+      },
+      {
+        "name": "openfoodfoundation",
+        "owner": "openfoodnetwork"
+      },
+      {
+        "name": "City-Bureau",
+        "owner": "city-scrapers"
+      },
+      {
+        "name": "vuetifyjs",
+        "owner": "vuetify"
+      },
+      {
+        "name": "best-flutter",
+        "owner": "flutter_swiper"
+      },
+      {
+        "name": "hasura",
+        "owner": "graphql-engine"
+      },
+      {
+        "name": "ccxt",
+        "owner": "ccxt"
+      },
+      {
+        "name": "teoljungberg",
+        "owner": "fx"
+      },
+      {
+        "name": "rswag",
+        "owner": "rswag"
+      },
+      {
+        "name": "stripe",
+        "owner": "react-stripe-js"
+      },
+      {
+        "name": "heartcombo",
+        "owner": "devise-encryptable"
+      },
+      {
+        "name": "zzrough",
+        "owner": "gs-extensions-drop-down-terminal"
+      },
+      {
+        "name": "reduxjs",
+        "owner": "redux-toolkit"
+      },
+      {
+        "name": "go-playground",
+        "owner": "validator"
+      },
+      {
+        "name": "mperham",
+        "owner": "sidekiq"
+      },
+      {
+        "name": "davydovanton",
+        "owner": "sidekiq-statistic"
+      },
+      {
+        "name": "nsarno",
+        "owner": "knock"
+      },
+      {
+        "name": "ruby",
+        "owner": "ruby"
+      },
+      {
+        "name": "ReactiveX",
+        "owner": "rxdart"
+      },
+      {
+        "name": "jquense",
+        "owner": "yup"
+      },
+      {
+        "name": "buefy",
+        "owner": "buefy"
+      },
+      {
+        "name": "ruby-i18n",
+        "owner": "i18n"
+      },
+      {
+        "name": "teoljungberg",
+        "owner": "fx"
+      },
+      {
+        "name": "binarylogic",
+        "owner": "authlogic"
+      },
+      {
+        "name": "moment",
+        "owner": "moment"
+      },
+      {
+        "name": "animavita",
+        "owner": "animavita"
+      },
+      {
+        "name": "edisonywh",
+        "owner": "gearbox"
+      },
+      {
+        "name": "testing-library",
+        "owner": "jest-native"
+      },
+      {
+        "name": "knex",
+        "owner": "knex"
+      },
+      {
+        "name": "Vincit",
+        "owner": "objection.js"
+      },
+      {
+        "name": "typeorm",
+        "owner": "typeorm"
+      }
+    ]
+  }
+}
