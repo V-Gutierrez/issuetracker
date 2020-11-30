@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useGetRepositoryInfoQuery } from 'queries/generated/hooks';
 import { RiGitPullRequestFill, RiStarFill } from 'react-icons/ri';
 import { VscIssues } from 'react-icons/vsc';
 import Suspense from 'components/modules/Suspense';
+import StatsCard from 'components/modules/StatsCard';
+import useToolTip from 'components/hooks/useTooltip';
 
 interface RepositoryCardProps {
   name: string;
@@ -16,6 +18,14 @@ function RepositoryCard({ name, owner }: RepositoryCardProps) {
       owner
     }
   });
+  const {
+    toggleTooltip: togglePRsTooltip,
+    tooltipVisibility: pullrequestsTooltipVisibility
+  } = useToolTip();
+  const {
+    toggleTooltip: toggleIssuesTooltip,
+    tooltipVisibility: issuesTooltipVisibility
+  } = useToolTip();
 
   return (
     <>
@@ -25,7 +35,13 @@ function RepositoryCard({ name, owner }: RepositoryCardProps) {
             data-testid="repositorycard-title"
             className="repositorycard__title"
           >
-            <a href={data?.repository.url}>{data?.repository?.nameWithOwner}</a>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href={data?.repository.url}
+            >
+              {data?.repository?.nameWithOwner}
+            </a>
           </h1>
           <Suspense loadingState={loading}>
             <span
@@ -38,13 +54,36 @@ function RepositoryCard({ name, owner }: RepositoryCardProps) {
                 </span>
                 <p>{data?.repository?.stargazerCount}</p>
               </span>
-              <span className="repositorycard__stats__pullrequests">
+              <span
+                className="repositorycard__stats__pullrequests"
+                onMouseEnter={togglePRsTooltip}
+                onMouseLeave={togglePRsTooltip}
+              >
+                {pullrequestsTooltipVisibility && (
+                  <span className="repositorycard__stats__tooltip">
+                    {data?.repository.issues.nodes.map((pullRequest) => {
+                      return <StatsCard {...pullRequest} type="pull_request" />;
+                    })}
+                  </span>
+                )}
                 <span role="img">
                   <RiGitPullRequestFill size={30} color="white" />
                 </span>
                 <p>{data?.repository?.pullRequests.totalCount}</p>
               </span>
-              <span className="repositorycard__stats__issues">
+
+              <span
+                className="repositorycard__stats__issues"
+                onMouseEnter={toggleIssuesTooltip}
+                onMouseLeave={toggleIssuesTooltip}
+              >
+                {issuesTooltipVisibility && (
+                  <span className="repositorycard__stats__tooltip">
+                    {data?.repository.issues.nodes.map((issue) => {
+                      return <StatsCard {...issue} type="issue" />;
+                    })}
+                  </span>
+                )}
                 <span role="img">
                   <VscIssues size={30} color="white" />
                 </span>
