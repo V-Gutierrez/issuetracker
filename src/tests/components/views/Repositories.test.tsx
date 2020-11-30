@@ -5,7 +5,9 @@ import { queryMock } from 'tests/mocks';
 
 describe('Repositories View Component', () => {
   it('should render properly based on props', () => {
-    const mockedRepositories = [{ name: 'IssueTracker', owner: 'v-gutierrez' }];
+    const mockedRepositories = [
+      { id: '__id__', name: 'IssueTracker', owner: 'v-gutierrez' }
+    ];
 
     render(
       <MockedProvider mocks={queryMock} addTypename={false}>
