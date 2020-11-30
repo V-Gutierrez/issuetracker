@@ -62,7 +62,7 @@ function RepositoryCard({ name, owner }: RepositoryCardProps) {
               >
                 {pullrequestsTooltipVisibility && (
                   <span className="repositorycard__stats__tooltip">
-                    {data?.repository.issues.nodes.map((pullRequest) => {
+                    {data?.repository.pullRequests.nodes.map((pullRequest) => {
                       return <StatsCard {...pullRequest} type="pull_request" />;
                     })}
                   </span>
