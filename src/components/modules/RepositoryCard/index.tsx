@@ -55,6 +55,7 @@ function RepositoryCard({ name, owner }: RepositoryCardProps) {
                 <p>{data?.repository?.stargazerCount}</p>
               </span>
               <span
+                data-testid="repositorycard-pullrequeststooltip"
                 className="repositorycard__stats__pullrequests"
                 onMouseEnter={togglePRsTooltip}
                 onMouseLeave={togglePRsTooltip}
@@ -73,6 +74,7 @@ function RepositoryCard({ name, owner }: RepositoryCardProps) {
               </span>
 
               <span
+                data-testid="repositorycard-issuestooltip"
                 className="repositorycard__stats__issues"
                 onMouseEnter={toggleIssuesTooltip}
                 onMouseLeave={toggleIssuesTooltip}
