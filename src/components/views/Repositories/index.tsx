@@ -2,6 +2,7 @@ import React from 'react';
 import RepositoryCard from 'components/modules/RepositoryCard';
 
 interface RepositoryNameAndOwnerDTO {
+  id: string;
   name: string;
   owner: string;
 }
@@ -13,10 +14,9 @@ interface RepositoriesProps {
 function Repositories({ repositories }: RepositoriesProps) {
   return (
     <span className="repositories" data-testid="repositories-wrapper">
-      {repositories &&
-        repositories.map(({ name, owner }) => (
-          <RepositoryCard key={name + owner} name={name} owner={owner} />
-        ))}
+      {repositories?.map(({ id, name, owner }) => (
+        <RepositoryCard key={id} name={name} owner={owner} />
+      ))}
     </span>
   );
 }

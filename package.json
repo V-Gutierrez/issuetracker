@@ -7,13 +7,15 @@
     "build": "next build",
     "start": "next start",
     "test": "jest",
-    "gql-codegen": "graphql-codegen --config codegen.yml",
-    "upload-coverage": "codecov"
+    "gql-codegen": "graphql-codegen --config codegen.yml ",
+    "upload-coverage": "codecov -t"
   },
   "dependencies": {
     "@apollo/client": "^3.2.9",
     "@apollo/react-hooks": "^4.0.0",
     "apollo-boost": "^0.4.9",
+    "axios": "^0.21.0",
+    "axios-hooks": "^2.2.0",
     "codecov": "^3.8.1",
     "graphql": "^15.4.0",
     "next": "9.5.5",
