@@ -3,7 +3,7 @@ import { useGetRepositoryInfoQuery } from 'queries/generated/hooks';
 import { RiGitPullRequestFill, RiStarFill } from 'react-icons/ri';
 import { VscIssues } from 'react-icons/vsc';
 import Suspense from 'components/modules/Suspense';
-import StatsCard from 'components/modules/StatsCard';
+import StatsCard from 'components/modules/RepositoryCard/StatsCard';
 import useToolTip from 'components/hooks/useTooltip';
 
 interface RepositoryCardProps {
@@ -63,7 +63,13 @@ function RepositoryCard({ name, owner }: RepositoryCardProps) {
                 {pullrequestsTooltipVisibility && (
                   <span className="repositorycard__stats__tooltip">
                     {data?.repository.pullRequests.nodes.map((pullRequest) => {
-                      return <StatsCard {...pullRequest} type="pull_request" />;
+                      return (
+                        <StatsCard
+                          key={pullRequest.id}
+                          {...pullRequest}
+                          type="pull_request"
+                        />
+                      );
                     })}
                   </span>
                 )}
@@ -82,7 +88,9 @@ function RepositoryCard({ name, owner }: RepositoryCardProps) {
                 {issuesTooltipVisibility && (
                   <span className="repositorycard__stats__tooltip">
                     {data?.repository.issues.nodes.map((issue) => {
-                      return <StatsCard {...issue} type="issue" />;
+                      return (
+                        <StatsCard key={issue.id} {...issue} type="issue" />
+                      );
                     })}
                   </span>
                 )}

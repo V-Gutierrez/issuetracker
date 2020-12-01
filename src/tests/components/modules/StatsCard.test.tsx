@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import StatsCard from 'components/modules/StatsCard';
+import StatsCard from 'components/modules/RepositoryCard/StatsCard';
 
 describe('StatsCard component', () => {
   it('should render properly based on props', () => {

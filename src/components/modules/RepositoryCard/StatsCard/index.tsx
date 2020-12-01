@@ -12,7 +12,6 @@ function StatsCard({ id, title, url, type }: StatsCard) {
     <div
       data-testid="statscard-wrapper"
       className={type === 'issue' ? 'issue__card' : 'pullrequest__card'}
-      key={id}
     >
       <a
         data-testid="statscard-anchor"
