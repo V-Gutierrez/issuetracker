@@ -12,7 +12,7 @@ import { queryMock } from 'tests/mocks';
 describe('RepositoryCard component', () => {
   it('should render properly based on passed props', async () => {
     render(
-      <MockedProvider mocks={queryMock} addTypename={false}>
+      <MockedProvider mocks={queryMock} addTypename={true}>
         <RepositoryCard name="issuetracker" owner="v-gutierrez" />
       </MockedProvider>
     );
