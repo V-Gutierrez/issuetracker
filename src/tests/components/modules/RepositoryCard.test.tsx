@@ -23,17 +23,17 @@ describe('RepositoryCard component', () => {
 
     await waitForElementToBeRemoved(
       screen.getByTestId('suspense-default-fallback')
-    ).then(() => {
-      const repositoryCardTitle = screen.getByTestId('repositorycard-title');
-      const repositoryCardStatsContainer = screen.getByTestId(
-        'repositorycard-stats'
-      );
+    );
 
-      expect(repositoryCardTitle).toBeTruthy();
-      expect(repositoryCardStatsContainer).toBeTruthy();
-      expect(repositoryCardStatsContainer.hasChildNodes()).toBe(true);
-      expect(repositoryCardStatsContainer.children.length).toEqual(3);
-    });
+    const repositoryCardTitle = screen.getByTestId('repositorycard-title');
+    const repositoryCardStatsContainer = screen.getByTestId(
+      'repositorycard-stats'
+    );
+
+    expect(repositoryCardTitle).toBeTruthy();
+    expect(repositoryCardStatsContainer).toBeTruthy();
+    expect(repositoryCardStatsContainer.hasChildNodes()).toBe(true);
+    expect(repositoryCardStatsContainer.children.length).toEqual(3);
 
     expect.assertions(5);
   });
