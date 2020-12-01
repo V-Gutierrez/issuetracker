@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useGetRepositoryInfoQuery } from 'queries/generated/hooks';
 import { RiGitPullRequestFill, RiStarFill } from 'react-icons/ri';
 import { VscIssues } from 'react-icons/vsc';
