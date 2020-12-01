@@ -1,10 +1,7 @@
 import React from 'react';
 import { useGetRepositoryInfoQuery } from 'queries/generated/hooks';
-import { RiGitPullRequestFill, RiStarFill } from 'react-icons/ri';
-import { VscIssues } from 'react-icons/vsc';
 import Suspense from 'components/modules/Suspense';
-import StatsCard from 'components/modules/RepositoryCard/StatsCard';
-import useToolTip from 'components/hooks/useTooltip';
+import StatsItem from 'components/modules/RepositoryCard/StatsItem';
 
 interface RepositoryCardProps {
   name: string;
@@ -18,14 +15,6 @@ function RepositoryCard({ name, owner }: RepositoryCardProps) {
       owner
     }
   });
-  const {
-    toggleTooltip: togglePRsTooltip,
-    tooltipVisibility: pullrequestsTooltipVisibility
-  } = useToolTip();
-  const {
-    toggleTooltip: toggleIssuesTooltip,
-    tooltipVisibility: issuesTooltipVisibility
-  } = useToolTip();
 
   return (
     <>
@@ -48,57 +37,11 @@ function RepositoryCard({ name, owner }: RepositoryCardProps) {
               data-testid="repositorycard-stats"
               className="repositorycard__stats"
             >
-              <span className="repositorycard__stats__stars">
-                <span role="img">
-                  <RiStarFill size={30} color="white" />
-                </span>
-                <p>{data?.repository?.stargazerCount}</p>
-              </span>
-              <span
-                data-testid="repositorycard-pullrequeststooltip"
-                className="repositorycard__stats__pullrequests"
-                onMouseEnter={togglePRsTooltip}
-                onMouseLeave={togglePRsTooltip}
-              >
-                {pullrequestsTooltipVisibility && (
-                  <span className="repositorycard__stats__tooltip">
-                    {data?.repository.pullRequests.nodes.map((pullRequest) => {
-                      return (
-                        <StatsCard
-                          key={pullRequest.id}
-                          {...pullRequest}
-                          type="pull_request"
-                        />
-                      );
-                    })}
-                  </span>
-                )}
-                <span role="img">
-                  <RiGitPullRequestFill size={30} color="white" />
-                </span>
-                <p>{data?.repository?.pullRequests.totalCount}</p>
-              </span>
-
-              <span
-                data-testid="repositorycard-issuestooltip"
-                className="repositorycard__stats__issues"
-                onMouseEnter={toggleIssuesTooltip}
-                onMouseLeave={toggleIssuesTooltip}
-              >
-                {issuesTooltipVisibility && (
-                  <span className="repositorycard__stats__tooltip">
-                    {data?.repository.issues.nodes.map((issue) => {
-                      return (
-                        <StatsCard key={issue.id} {...issue} type="issue" />
-                      );
-                    })}
-                  </span>
-                )}
-                <span role="img">
-                  <VscIssues size={30} color="white" />
-                </span>
-                <p>{data?.repository?.issues.totalCount}</p>
-              </span>
+              <StatsItem
+                dataset={data?.repository?.pullRequests}
+                type="pull_request"
+              />
+              <StatsItem dataset={data?.repository?.issues} type="issue" />
             </span>
           </Suspense>
         </span>

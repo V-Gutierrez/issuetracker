@@ -33,7 +33,7 @@ describe('RepositoryCard component', () => {
     expect(repositoryCardTitle).toBeTruthy();
     expect(repositoryCardStatsContainer).toBeTruthy();
     expect(repositoryCardStatsContainer.hasChildNodes()).toBe(true);
-    expect(repositoryCardStatsContainer.children.length).toEqual(3);
+    expect(repositoryCardStatsContainer.children.length).toEqual(2);
 
     expect.assertions(5);
   });

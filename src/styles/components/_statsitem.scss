@@ -1,0 +1,30 @@
+.statsitem__stats__pullrequests,
+.statsitem__stats__issues {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+  margin: 2.5% 5%;
+  line-height: 0.5;
+  color: rgb(204, 203, 203);
+}
+
+.statsitem__stats__tooltip {
+  position: absolute;
+  padding: 10%;
+  height: min-content;
+  width: calc(100% * 5);
+  left: 35%;
+  top: 30%;
+  background: rgb(82, 82, 79);
+  color: black;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+
+  @include prefix(border-radius, 1px 8px 8px 8px, webkit ms o moz);
+  @include prefix(text-overflow, ellipsis, webkit ms o moz);
+}
