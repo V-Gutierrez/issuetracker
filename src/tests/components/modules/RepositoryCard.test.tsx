@@ -7,27 +7,12 @@ import {
 import { MockedProvider } from '@apollo/client/testing';
 
 import RepositoryCard from 'components/modules/RepositoryCard';
-import { GetRepositoryInfoDocument } from 'queries/generated/hooks';
+import { queryMock } from 'tests/mocks';
 
 describe('RepositoryCard component', () => {
   it('should render properly based on passed props', async () => {
-    const mocks = [
-      {
-        request: {
-          query: GetRepositoryInfoDocument,
-          variables: {
-            name: 'issuetracker',
-            owner: 'v-gutierrez'
-          }
-        },
-        result: {
-          data: {}
-        }
-      }
-    ];
-
     render(
-      <MockedProvider mocks={mocks} addTypename={false}>
+      <MockedProvider mocks={queryMock} addTypename={false}>
         <RepositoryCard name="issuetracker" owner="v-gutierrez" />
       </MockedProvider>
     );
