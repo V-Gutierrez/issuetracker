@@ -1,0 +1,34 @@
+.issue__card {
+  background-color: white;
+  margin: 3.5%;
+  padding: 5%;
+  font-size: 0.9rem;
+  line-height: 1rem;
+
+  @include prefix(border-radius, 5px, webkit ms o moz);
+}
+
+.issue__card:hover {
+  cursor: pointer;
+  background-color: rgba(201, 201, 201, 0.604);
+  color: white;
+}
+
+.pullrequest__card {
+  background-color: white;
+  margin: 3.5%;
+  padding: 5%;
+  font-size: 0.9rem;
+  line-height: 1rem;
+
+  @include prefix(border-radius, 5px, webkit ms o moz);
+}
+.pullrequest__card > svg {
+  color: green;
+}
+
+.pullrequest__card:hover {
+  cursor: pointer;
+  background-color: rgba(201, 201, 201, 0.604);
+  color: white;
+}

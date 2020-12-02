@@ -8,7 +8,7 @@
     "start": "next start",
     "test": "jest",
     "gql-codegen": "graphql-codegen --config codegen.yml ",
-    "upload-coverage": "codecov -t"
+    "upload-coverage": "codecov -t d8628279-840b-4f22-ac30-ab0091cc2bfd"
   },
   "dependencies": {
     "@apollo/client": "^3.2.9",
@@ -37,7 +37,8 @@
     "@testing-library/dom": "^7.26.0",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.0.4",
-    "@testing-library/user-event": "^12.1.7",
+    "@testing-library/react-hooks": "^3.4.2",
+    "@testing-library/user-event": "^12.3.0",
     "@types/node": "^14.11.8",
     "@types/react": "^16.9.52",
     "babel-jest": "^26.5.2",

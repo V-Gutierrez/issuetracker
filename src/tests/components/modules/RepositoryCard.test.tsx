@@ -7,27 +7,12 @@ import {
 import { MockedProvider } from '@apollo/client/testing';
 
 import RepositoryCard from 'components/modules/RepositoryCard';
-import { GetRepositoryInfoDocument } from 'queries/generated/hooks';
+import { queryMock } from 'tests/mocks';
 
 describe('RepositoryCard component', () => {
   it('should render properly based on passed props', async () => {
-    const mocks = [
-      {
-        request: {
-          query: GetRepositoryInfoDocument,
-          variables: {
-            name: 'issuetracker',
-            owner: 'v-gutierrez'
-          }
-        },
-        result: {
-          data: {}
-        }
-      }
-    ];
-
     render(
-      <MockedProvider mocks={mocks} addTypename={false}>
+      <MockedProvider mocks={queryMock} addTypename={true}>
         <RepositoryCard name="issuetracker" owner="v-gutierrez" />
       </MockedProvider>
     );
@@ -38,17 +23,17 @@ describe('RepositoryCard component', () => {
 
     await waitForElementToBeRemoved(
       screen.getByTestId('suspense-default-fallback')
-    ).then(() => {
-      const repositoryCardTitle = screen.getByTestId('repositorycard-title');
-      const repositoryCardStatsContainer = screen.getByTestId(
-        'repositorycard-stats'
-      );
+    );
 
-      expect(repositoryCardTitle).toBeTruthy();
-      expect(repositoryCardStatsContainer).toBeTruthy();
-      expect(repositoryCardStatsContainer.hasChildNodes()).toBe(true);
-      expect(repositoryCardStatsContainer.children.length).toEqual(3);
-    });
+    const repositoryCardTitle = screen.getByTestId('repositorycard-title');
+    const repositoryCardStatsContainer = screen.getByTestId(
+      'repositorycard-stats'
+    );
+
+    expect(repositoryCardTitle).toBeTruthy();
+    expect(repositoryCardStatsContainer).toBeTruthy();
+    expect(repositoryCardStatsContainer.hasChildNodes()).toBe(true);
+    expect(repositoryCardStatsContainer.children.length).toEqual(2);
 
     expect.assertions(5);
   });

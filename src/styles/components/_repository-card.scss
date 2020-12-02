@@ -2,10 +2,8 @@
   width: 90%;
   height: 200px;
   background: rgb(51, 51, 50);
-  word-break: break-all;
   text-overflow: ellipsis;
   border-radius: 5px;
-  overflow: hidden;
 }
 
 .repositorycard__title {
@@ -29,15 +27,4 @@
   justify-content: center;
   display: flex;
   @include prefix(user-select, none, webkit ms o moz);
-}
-
-.repositorycard__stats__stars,
-.repositorycard__stats__pullrequests,
-.repositorycard__stats__issues {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 2.5% 5%;
-  line-height: 0.5;
-  color: rgb(204, 203, 203);
 }
