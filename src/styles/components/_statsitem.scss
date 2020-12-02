@@ -28,3 +28,8 @@
   @include prefix(border-radius, 1px 8px 8px 8px, webkit ms o moz);
   @include prefix(text-overflow, ellipsis, webkit ms o moz);
 }
+
+.statsitem__empty-warning {
+  color: white;
+  padding: 2.5%;
+}

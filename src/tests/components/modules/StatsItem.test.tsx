@@ -48,4 +48,15 @@ describe('StatsItem component', () => {
     userEvent.hover(wrapper);
     expect(screen.getByTestId('statsitem-nodeslist')).toBeTruthy();
   });
+
+  it('should render warning when item has nothing to list', () => {
+    const emptyMockedList: unknown = { nodes: [] };
+
+    render(<StatsItem dataset={emptyMockedList} type="pull_request" />);
+
+    const wrapper = screen.getByTestId('statsitem-pullrequeststooltip');
+
+    userEvent.hover(wrapper);
+    expect(screen.getByTestId('statsitem-emptywarning')).toBeTruthy();
+  });
 });

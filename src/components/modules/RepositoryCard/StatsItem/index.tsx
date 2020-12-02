@@ -34,10 +34,17 @@ function StatsItem({ dataset, type }: StatsItemProps) {
       onMouseLeave={toggleTooltip}
     >
       {tooltipVisibility && (
-        <span  data-testid='statsitem-nodeslist' className="statsitem__stats__tooltip">
-          {dataset?.nodes.map((item: NodeItem) => {
-            return <StatsCard key={item.id} {...item} type={type} />;
-          })}
+        <span
+          data-testid="statsitem-nodeslist"
+          className="statsitem__stats__tooltip"
+        >
+          {dataset?.nodes.length > 0 ? (
+            dataset?.nodes.map((item: NodeItem) => {
+              return <StatsCard key={item.id} {...item} type={type} />;
+            })
+          ) : (
+            <p  data-testid="statsitem-emptywarning" className="statsitem__empty-warning">Nothing to see yet</p>
+          )}
         </span>
       )}
       <span role="img">
