@@ -1,5 +1,5 @@
 import { act, renderHook } from '@testing-library/react-hooks';
-import useToolTip from 'components/hooks/useTooltip';
+import useToolTip from 'hooks/useTooltip';
 
 describe('useToolTip hooks', () => {
   it('should switch toogle state properly ', () => {
