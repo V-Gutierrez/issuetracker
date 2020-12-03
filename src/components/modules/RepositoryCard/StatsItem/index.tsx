@@ -1,4 +1,4 @@
-import useToolTip from 'components/hooks/useTooltip';
+import useToolTip from 'hooks/useTooltip';
 import StatsCard from 'components/modules/RepositoryCard/StatsCard';
 import React from 'react';
 import { RiGitPullRequestFill } from 'react-icons/ri';
