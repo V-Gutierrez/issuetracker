@@ -1,6 +1,6 @@
 version: 2.1
 orbs:
-  codecov: codecov/codecov@1.0.2
+  codecov: codecov/codecov@3.1.0
 jobs:
   build:
     docker:
@@ -21,4 +21,6 @@ jobs:
             - ./node_modules
       - run:
           name: Run tests and Collect Coverage Reports
-          command: npm run test && npm run upload-coverage -t d8628279-840b-4f22-ac30-ab0091cc2bfd
+          command: npm run test --coverage
+      - codecov/upload:
+          flags: unittests
