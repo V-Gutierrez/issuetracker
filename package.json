@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "test": "jest",
-    "gql-codegen": "graphql-codegen --config codegen.yml ",
+    "gql-codegen": "graphql-codegen --config codegen.yml",
     "upload-coverage": "codecov -t d8628279-840b-4f22-ac30-ab0091cc2bfd"
   },
   "dependencies": {
