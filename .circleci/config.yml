@@ -23,7 +23,7 @@ jobs:
           name: Run tests and Collect Coverage Reports
           command: npm run test --coverage
       - codecov/upload:
-          file: ./coverage
+          file: ./coverage/lcov.info
           flags: unittests
 
 
