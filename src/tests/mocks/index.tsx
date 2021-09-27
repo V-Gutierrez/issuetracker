@@ -1,4 +1,7 @@
-import { GetRepositoryInfoDocument } from 'queries/generated/hooks';
+import { GetRepositoryInfoDocument, useGetRepositoryInfoQuery } from 'queries/generated/hooks';
+import { MockedProvider } from '@apollo/client/testing';
+import { renderHook } from '@testing-library/react-hooks';
+
 
 export const queryMock = [
   {
@@ -62,3 +65,25 @@ export const queryMock = [
     }
   }
 ];
+
+export function getHookWrapper(mocks = queryMock) {
+  const wrapper = ({ children }: { children: React.ReactNode }) => (
+    <MockedProvider mocks={mocks} addTypename={false} >
+      {children}
+    </MockedProvider>
+  );
+  const { result, waitForNextUpdate } = renderHook(() => useGetRepositoryInfoQuery({
+    variables: {
+      name: 'issuetracker',
+      owner: 'v-gutierrez'
+    }
+  }), {
+    wrapper
+  });
+
+  expect(result.current.loading).toBeTruthy();
+  expect(result.current.error).toBeUndefined();
+  expect(result.current.data).toBeUndefined();
+
+  return { result, waitForNextUpdate };
+}
